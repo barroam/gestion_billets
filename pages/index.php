@@ -8,9 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-          <!-- la formule de reservation de billet -->
+    <!-- La formulaire de réservation de billet -->
 <h1>Réservation</h1>
-<form action="../traitement/ajout_billet.php" method="$_POST">
+<form action="../traitement/ajout_billet.php" method="post">
+    <input class="item" type="text" name="mode_transport" placeholder="Mode de transport"><br>
+    <input class="item" type="text" name="ville_depart" placeholder="Ville de départ du voyage"> <br>
+    <input class="item" type="datetime-local" name="date_depart" ><br>
+    <input class="item" type="text" name="ville_arrive" placeholder="Ville d'arrivée du voyage"> <br>
+    <input class="item" type="datetime-local" name="date_arrive"><br>
+    <input class="item" type="number" name="prix" placeholder="Le coût du voyage"><br>
+    <input class="item" type="text" name="status" placeholder="Statut du voyage"><br>
+    <input class="item" type="datetime-local" name="heure_reservation" ><br>
+    <button type="submit" name="save_AJOUT">S'inscrire</button>
+</form>
+          <!-- la formule de reservation de billet 
+<h1>Réservation</h1>
+<form action="../traitement/ajout_billet.php" method="POST">
 <input class="item " type="text" name="mode_transport" placeholder="Mode de transport"><br>
 <input class="item " type="text" name="ville_depart" placeholder="Ville de départ du voyage"> <br>
 <input class="item " type="DateTime-local" name="date_depart" ><br>
@@ -21,7 +34,7 @@
 <input class="item " type="DateTime-local" name="heure_reservation" ><br>
 <button type="submit" name="save_AJOUT">S'inscrire</button>
 </form>
- 
+-->
 
 
 </body>

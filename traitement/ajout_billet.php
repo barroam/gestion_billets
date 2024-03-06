@@ -9,37 +9,51 @@ require('../traitement/BDD.php');
 
 //stockage de donnée
 if(isset($_POST['save_AJOUT'])){
- $heure_reservation =  ($_POST['heure_reservation']);
-    $mode_transport =  ($_POST['mode_transport']);
-      $ville_depart =  ($_POST['ville_depart']);
-       $date_depart =  ($_POST['date_depart']);
-      $ville_arrive =  ($_POST['ville_arrive']);
-       $date_arrive =  ($_POST['date_arrive']);
-              $prix =  ($_POST['prix']);
-            $status =  ($_POST['status']);
-      
-
+ $heure_reservation =  $_POST['heure_reservation'];
+    $mode_transport =  $_POST['mode_transport'];
+      $ville_depart =  $_POST['ville_depart'];
+       $date_depart =  $_POST['date_depart'];
+      $ville_arrive =  $_POST['ville_arrive'];
+       $date_arrive =  $_POST['date_arrive'];
+              $prix =  $_POST['prix'];
+            $status =  $_POST['status'];
+           
+          
 if( !empty($heure_reservation) && !empty($mode_transport) && !empty($ville_depart) &&
-    !empty($date_depart) &&  !empty($ville_arrivee) && !empty($prix) &&
-    !empty($status) && !empty($telephone) ) {
+    !empty($date_depart) &&  !empty($ville_arrive) && !empty($prix) &&
+    !empty($status)) {
    
+        $connexion = connect();
+
     $requette = "INSERT INTO Billet (heure_reservation,mode_transport,date_depart,ville_depart,date_arrive,ville_arrive,prix,status) 
     VALUE(:heure_reservation,:mode_transport,:date_depart,:ville_depart,:date_arrive,:ville_arrive,:prix,:status)";
      
+     $requette_cours = $connexion->prepare($requette);
 
+    $requette_cours->bindvalue(':heure_reservation',$heure_reservation);
+    $requette_cours->bindvalue(':mode_transport',$mode_transport);
+    $requette_cours->bindvalue(':date_depart',$date_depart);
+    $requette_cours->bindvalue(':ville_depart',$ville_depart);
+    $requette_cours->bindvalue(':date_arrive',$date_arrive);
+    $requette_cours->bindvalue(':ville_arrive',$ville_arrive);
+    $requette_cours->bindvalue(':prix',$prix);
+    $requette_cours->bindvalue(':status',$status);
 
+    $result = $requette_cours->execute();
+
+     if(!$result){
+        echo "Un probléme est survenu ,l'enregistrement n' a pas été effectué";
+     }else {
+        echo " vous etes bien enregistres Votre identifiant est : " .$connexion->lastinsertId() ;
+        header("location: ../pages/index.php");
+     }
 
 }else {
     echo "tous les champs sont obligatoires";
 }
 
-
-
-
-
 }
-
-     
+    
 ?>
 
 
