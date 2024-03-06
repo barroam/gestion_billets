@@ -1,3 +1,4 @@
+<?php require('../block/header.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
