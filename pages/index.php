@@ -7,11 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
     <!-- La formulaire de réservation de billet -->
 <h1>Réservation</h1>
 <form action="../traitement/ajout_billet.php" method="post">
+<input class="item" type="text" name="nom_complet" placeholder="Votre nom complet"><br>
+<input class="item" type="number" name="telephone" placeholder="Votre Numéro de téléphone"><br>
     <input class="item" type="text" name="mode_transport" placeholder="Mode de transport"><br>
     <input class="item" type="text" name="ville_depart" placeholder="Ville de départ du voyage"> <br>
     <input class="item" type="datetime-local" name="date_depart" ><br>

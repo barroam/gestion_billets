@@ -9,6 +9,8 @@ require('../traitement/BDD.php');
 
 //stockage de donnée
 if(isset($_POST['save_AJOUT'])){
+       $nom_complet = $_POST['nom_complet'];
+       $telephone = $_POST['telephone'];
  $heure_reservation =  $_POST['heure_reservation'];
     $mode_transport =  $_POST['mode_transport'];
       $ville_depart =  $_POST['ville_depart'];
@@ -19,17 +21,19 @@ if(isset($_POST['save_AJOUT'])){
             $status =  $_POST['status'];
            
           
-if( !empty($heure_reservation) && !empty($mode_transport) && !empty($ville_depart) &&
+if( !empty($nom_complet) && !empty($telephone) && !empty($heure_reservation) && !empty($mode_transport) && !empty($ville_depart) &&
     !empty($date_depart) &&  !empty($ville_arrive) && !empty($prix) &&
     !empty($status)) {
    
         $connexion = connect();
 
-    $requette = "INSERT INTO Billet (heure_reservation,mode_transport,date_depart,ville_depart,date_arrive,ville_arrive,prix,status) 
-    VALUE(:heure_reservation,:mode_transport,:date_depart,:ville_depart,:date_arrive,:ville_arrive,:prix,:status)";
+    $requette = "INSERT INTO Billet ( nom_complet,telephone,heure_reservation,mode_transport,date_depart,ville_depart,date_arrive,ville_arrive,prix,status) 
+    VALUE(:nom_complet,:telephone,:heure_reservation,:mode_transport,:date_depart,:ville_depart,:date_arrive,:ville_arrive,:prix,:status)";
      
      $requette_cours = $connexion->prepare($requette);
 
+    $requette_cours->bindvalue(':nom_complet',$nom_complet);
+    $requette_cours->bindvalue(':telephone',$telephone);
     $requette_cours->bindvalue(':heure_reservation',$heure_reservation);
     $requette_cours->bindvalue(':mode_transport',$mode_transport);
     $requette_cours->bindvalue(':date_depart',$date_depart);
@@ -45,7 +49,7 @@ if( !empty($heure_reservation) && !empty($mode_transport) && !empty($ville_depar
         echo "Un probléme est survenu ,l'enregistrement n' a pas été effectué";
      }else {
         echo " vous etes bien enregistres Votre identifiant est : " .$connexion->lastinsertId() ;
-        header("location: ../pages/index.php");
+        header("location: ../traitement/affiche_billet.php");
      }
 
 }else {
