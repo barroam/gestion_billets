@@ -1,4 +1,7 @@
-<?php require('../block/header.php');?>
+<?php
+ 
+
+ require('../block/header.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,14 +55,13 @@
           </div>
            
           <div class="box_trait">
-            <a href="../traitement/modifie_billet.php?id=<?= $billet['id']?> "> <i class="fa-solid fa-pen-to-square" style="color: #3011bc;"></i></a> 
-            <a href="../traitement/supprime_billet.php">   <i class="fa-solid fa-trash" style="color: #fe7a15;"></i></a>
+            <a href="../traitement/modifie_billet.php?id=<?= $billet['id']?> "> <i class="fa-solid fa-pen-to-square" style="color: #3011bc;"> </i> </a> 
+            <a href="del.php?id=<?= $billet['id']?> "> <i class="fa-solid fa-trash" style="color: #fe7a15;"> </i></i> </a> 
           </div>
         </div>  
-       
                 </section>
+           
 
-       
         <style>
             .container{
             margin: 1%;
@@ -107,6 +109,7 @@
             .fa-solid{
                 font-size: 2rem;
             }
+         
           
         </style>
             </div>
