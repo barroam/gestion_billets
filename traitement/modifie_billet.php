@@ -37,39 +37,53 @@ $status = $billet[0]['status'];
 <input class="item" type="number" name="telephone" value="<?= $telephone?>"><br>
     <input class="item" type="text" name="mode_transport" value="<?= $mode_transport?>"><br>
     <input class="item" type="text" name="ville_depart"value="<?= $ville_depart?>"  > <br>
-    <input class="item" type="datetime-local" name="date_depart" ><br>
+    <input class="item" type="datetime-local" name="date_depart" value="<?= $date_depart?>" ><br>
     <input class="item" type="text" name="ville_arrive" value="<?= $ville_arrive?>"> <br>
-    <input class="item" type="datetime-local" name="date_arrive"><br>
+    <input class="item" type="datetime-local" name="date_arrive" value="<?= $date_arrive?>"><br>
     <input class="item" type="number" name="prix" value="<?= $prix?>"><br>
     <input class="item" type="text" name="status" value="<?= $status?>" ><br>
-    <input class="item" type="datetime-local" name="heure_reservation" ><br>
-    <button type="submit" name="save_MODIFIE">Modifier la réservation</button>
+    <input class="item" type="datetime-local" name="heure_reservation" value="<?= $heure_reservation?>" ><br>
+    <button type="submit" value="<?= $id ?>" name="MODIFIE">Modifier la réservation</button>
+
 </form>
 
 
-
-
-
 <?php
-if(isset($_POST[ 'save_MODIFIE'])){
+if(isset($_POST['MODIFIE'])){
     
-$id = $_POST['save_MODIFIE'];
-$nom_complet = $_POST['nom_complet'];
-$telephone = $_POST['telephone'];
-$heure_reservation = $_POST['heure_reservation'];
-$mode_transport = $_POST['mode_transport'];
-$date_depart = $_POST['date_depart'];
-$ville_depart = $_POST['ville_depart'];
-$date_arrive = $_POST['date_depart'];
-$ville_arrive = $_POST['ville_arrive'];
-$prix = $_POST['prix'];
-$status = $_POST['status'];
+    $id = $_POST['MODIFIE'];
+    $nom_complet = $_POST['nom_complet'];
+    $telephone = $_POST['telephone'];
+    $heure_reservation = $_POST['heure_reservation'];
+    $mode_transport = $_POST['mode_transport'];
+    $date_depart = $_POST['date_depart'];
+    $ville_depart = $_POST['ville_depart'];
+    $date_arrive = $_POST['date_arrive'];
+    $ville_arrive = $_POST['ville_arrive'];
+    $prix = $_POST['prix'];
+    $status = $_POST['status'];
 
+    $connexion = connect();
+    $updatestudent = $connexion->prepare("UPDATE Billet SET 
+        nom_complet='$nom_complet',
+        telephone='$telephone',
+        heure_reservation='$heure_reservation',
+        mode_transport='$mode_transport',
+        date_depart='$date_depart',
+        ville_depart='$ville_depart',
+        date_arrive='$date_arrive',
+        ville_arrive='$ville_arrive',
+        prix='$prix',
+        status='$status'
+        WHERE id=$id");
 
-
+    if ($updatestudent->execute()) {
+        header('location:../traitement/affiche_billet.php');
+    } else {
+        echo "Erreur lors de la modification.";
+    }
 }
-?>    
-
+?>
 
 
 
