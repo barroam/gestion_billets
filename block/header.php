@@ -15,10 +15,11 @@
     
 </div>
 <ul>
-    <li><a href="../pages/accueil.php">Accueil</a></li>
-    <li><a href="../pages/index.php">Réservation</a></li>
-    <li><a href="../pages/propos.php">Apropos</a></li>
-    <li><a href="../pages/profil.php">Profil</a></li>
+    <li><a href="../pages/accueil.php">Accueil </a></li>
+    <li><a href="../pages/index.php">Réserver</a></li>
+    <li><a href="../traitement/affiche_billet.php">Billets </a></li>
+    <li><a href="../pages/propos.php">Apropos </a></li>
+    <li><a href="../pages/profil.php">Profil </a></li>
 
 </ul>
 
@@ -41,28 +42,28 @@
         color: var(--orange);
     }
     nav div {
-        margin-right: 40%;
+    
         display: flex;
         justify-content: center;
-        
+        margin-right: 40%;
+        background-color:var(--orange);
     
     }
     nav div:hover{
-   background-color:var(--orange);
+        background-color: #fff;
+   
     }
-    nav div h1 span {
-      color: white;
-    }
-    nav div h1 span:hover{
-        color: var(--bleu);
-    }
+   
     nav div h1{
         color: white;
     }
+    nav div h1:hover{
+        color: var(--orange);
+    }
     nav ul{
         display: grid;
-        grid-template-columns: repeat(4,1fr);
-        margin-right: 35%;
+        grid-template-columns: repeat(5,1fr);
+        margin-right: 45%;
         align-items: center;
         gap: 10%;
     }
@@ -72,15 +73,13 @@
         font-size:1.3rem ;
         color: white;
         font-weight: 700;
-       padding: 12%;
-      
-        
-        
+
     }
     nav ul li a:hover{
      background-color:var(--orange) ;
      color: var(--bleu);
      border: 0.1rem solid  white;
+     padding: 15%;
      
     }
     nav ul li{
