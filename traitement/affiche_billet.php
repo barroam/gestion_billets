@@ -133,3 +133,5 @@
      </section>
 </body>
 </html>
+
+<?php require('../block/footer.php');?>

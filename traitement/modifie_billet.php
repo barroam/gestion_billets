@@ -123,5 +123,5 @@ background-color: #fff;
 </body>
 </html>
 
-
+<?php require('../block/footer.php');?>
 
