@@ -10,8 +10,12 @@
     <title>Document</title>
 </head>
 <body>
+
+<section class="all">
+
+
     
-<h1>Vos Billets</h1>
+<h1 class="titre_billets">Vos Billets</h1>
 
 <?php
            //link avec la base de donner 
@@ -24,20 +28,21 @@
 
            foreach ( $billet as $billet) {
             ?>
-            <div >
+            <div  class="cont_pages">
+           
                 <section class="container">
               
                 <div class="box_p"> 
-                <p><h4>Billet N°</h4>
-                <h3><?= $billet['id']?> </h4></p>
-            <p><h4>Nom complet</h4> <h3><?= $billet['nom_complet']?></h3> </p>
-            <p><h4> Numéro de téléphone</h4> <h3><?= $billet['telephone']?></h3> </p> 
+                <p><h4>Billet N°<?= $billet['id']?></h4></p>
+            <p><h4>Nom complet:  <?= $billet['nom_complet']?> </h4>  </p>
+            <p><h4> Numéro de téléphone: <?= $billet['telephone']?></h4> </p> 
         </div>
 
         <div class="L_box">
         <div class="box"> 
+        <p><h4> Transport</h4><?= $billet['mode_transport']?> </p> 
             <p><h4>Date de réservation</h4><?= $billet['heure_reservation']?> </p>
-            <p><h4> Transport</h4><?= $billet['mode_transport']?> </p> 
+           
         </div>
 
            <div class="box">   <p><h4>Ville de depart</h4><?= $billet['ville_depart']?> </p>
@@ -63,8 +68,17 @@
            
 
         <style>
+            .all{
+                margin:2% 7%;
+            }
+            .titre_billets{
+                align-items: center;
+                text-align: center;
+                color: #fe7a15;
+            }
+          
             .container{
-            margin: 1%;
+            margin: 2%;
              background-color: #CAD8DF;
              display:grid;
              grid-template-rows: repeat(2,1fr);
@@ -116,5 +130,6 @@
             <?php
            }
      ?>
+     </section>
 </body>
 </html>

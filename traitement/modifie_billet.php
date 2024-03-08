@@ -31,7 +31,7 @@ $prix = $billet[0]['prix'];
 $status = $billet[0]['status'];
 }
 ?>
-
+<div class="reservation">
 <form action="" method="post">
 <input class="item" type="text" name="nom_complet" value="<?= $nom_complet?>" ><br>
 <input class="item" type="number" name="telephone" value="<?= $telephone?>"><br>
@@ -46,6 +46,8 @@ $status = $billet[0]['status'];
     <button type="submit" value="<?= $id ?>" name="MODIFIE">Modifier la réservation</button>
 
 </form>
+
+</div>
 
 
 <?php
@@ -85,7 +87,38 @@ if(isset($_POST['MODIFIE'])){
 }
 ?>
 
+<style>
 
+  .reservation{
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    
+  }
+    .item{
+       align-items: center;
+        width: 17rem;
+        padding: 5%;
+        margin: 1.5%;
+        background-color: #9FCBF8;
+       
+    }
+    .item:hover{
+background-color: #fff;
+    }
+    button{
+        align-items: center;
+        text-align: center;
+        width: 18.9rem;
+        padding: 5%;
+        margin: 1.5%;
+        background-color: var(--orange);
+    }
+    button:hover{
+        background-color: var(--bleu);
+        color: #fff;
+    }
+</style>
 
 </body>
 </html>

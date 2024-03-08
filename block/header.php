@@ -18,12 +18,10 @@
     <li><a href="../pages/accueil.php">Accueil </a></li>
     <li><a href="../pages/index.php">Réserver</a></li>
     <li><a href="../traitement/affiche_billet.php">Billets </a></li>
-    <li><a href="../pages/propos.php">Apropos </a></li>
-    <li><a href="../pages/profil.php">Profil </a></li>
-
+   
 </ul>
 
-
+<li><a href="../pages/profil.php">Profil </a></li>
 </nav>
 
 
@@ -37,7 +35,7 @@
     nav{
 
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(3,1fr);
         background-color: var(--bleu);
         color: var(--orange);
     }
@@ -62,7 +60,7 @@
     }
     nav ul{
         display: grid;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(3,1fr);
         margin-right: 45%;
         align-items: center;
         gap: 10%;
@@ -75,21 +73,40 @@
         font-weight: 700;
 
     }
+
+
     nav ul li a:hover{
-     background-color:var(--orange) ;
-     color: var(--bleu);
-     border: 0.1rem solid  white;
-     padding: 15%;
      
+     color: white;
+     border-bottom: #fff 3px solid;
+    
+    
+    }
+
+    .navbar li{
+display: flex;
+        list-style: none;
+        align-items: center;
+        margin-left: 45%;
+    }
+
+        .navbar li a{
+        text-decoration: none;
+       align-items: center;
+        font-size:1.3rem ;
+        color: white;
+        font-weight: 700; padding: 7%;
+    }
+    .navbar li a:hover{
+        background-color: var(--orange);
     }
     nav ul li{
     list-style: none;
     }
+
     .logo{
         width: 4rem;
         height: auto;
-
-        
     }
    
 </style>
