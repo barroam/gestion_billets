@@ -89,3 +89,4 @@ background-color: #fff;
 </style>
 </body>
 </html>
+<?php require('../block/footer.php');?>

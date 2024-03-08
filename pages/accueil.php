@@ -1,4 +1,5 @@
 <?php require('../block/header.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -217,3 +218,5 @@ section div p span {
     </style>
 </body>
 </html>
+
+<?php require('../block/footer.php');?>
