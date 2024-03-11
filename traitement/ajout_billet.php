@@ -20,17 +20,14 @@ if(isset($_POST['save_AJOUT'])){
               $prix =  $_POST['prix'];
             $status =  $_POST['status'];
            
-          
 if( !empty($nom_complet) && !empty($telephone) && !empty($heure_reservation) && !empty($mode_transport) && !empty($ville_depart) &&
     !empty($date_depart) &&  !empty($ville_arrive) && !empty($prix) && !empty($status)) {
-   
+      
         $connexion = connect();
-
     $requette = "INSERT INTO Billet ( nom_complet,telephone,heure_reservation,mode_transport,date_depart,ville_depart,date_arrive,ville_arrive,prix,status) 
-    VALUE(:nom_complet,:telephone,:heure_reservation,:mode_transport,:date_depart,:ville_depart,:date_arrive,:ville_arrive,:prix,:status)";
-     
-     $requette_cours = $connexion->prepare($requette);
-
+    VALUE(:nom_complet,:telephone,:heure_reservation,:mode_transport,:date_depart,:ville_depart,:date_arrive,:ville_arrive,:prix,:status)"; 
+   
+   $requette_cours = $connexion->prepare($requette);
     $requette_cours->bindvalue(':nom_complet',$nom_complet);
     $requette_cours->bindvalue(':telephone',$telephone);
     $requette_cours->bindvalue(':heure_reservation',$heure_reservation);
@@ -41,9 +38,8 @@ if( !empty($nom_complet) && !empty($telephone) && !empty($heure_reservation) && 
     $requette_cours->bindvalue(':ville_arrive',$ville_arrive);
     $requette_cours->bindvalue(':prix',$prix);
     $requette_cours->bindvalue(':status',$status);
-
     $result = $requette_cours->execute();
-
+    
      if(!$result){
         echo "Un probléme est survenu ,l'enregistrement n' a pas été effectué";
      }else {

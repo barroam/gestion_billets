@@ -20,53 +20,40 @@
 <?php
            //link avec la base de donner 
           include('../traitement/BDD.php');
-          
           $getbillets = connect()->prepare("SELECT * FROM Billet");
           $getbillets->execute();
            $billet = $getbillets->fetchAll();
-          
-
            foreach ( $billet as $billet) {
             ?>
             <div  class="cont_pages">
-           
                 <section class="container">
-              
                 <div class="box_p"> 
                 <p><h4>Billet N°<?= $billet['id']?></h4></p>
             <p><h4>Nom complet:  <?= $billet['nom_complet']?> </h4>  </p>
             <p><h4> Numéro de téléphone: <?= $billet['telephone']?></h4> </p> 
         </div>
-
-        <div class="L_box">
+        <div class="L_box">La requête pour afficher les idées récupérer : 
         <div class="box"> 
         <p><h4> Transport</h4><?= $billet['mode_transport']?> </p> 
             <p><h4>Date de réservation</h4><?= $billet['heure_reservation']?> </p>
-           
         </div>
-
            <div class="box">   <p><h4>Ville de depart</h4><?= $billet['ville_depart']?> </p>
             <p><h4>Date_depart</h4><?= $billet['date_depart']?> </p> 
         </div>
-
           <div class="box">
           <p><h4>Ville d'arrivée</h4><?= $billet['ville_arrive']?> </p>
             <p><h4>Date_d'arrivée</h4><?= $billet['date_arrive']?> </p>
           </div>
-            
           <div class="box">
           <p><h4>Montant</h4><?= $billet['prix']?> </p>
             <p><h4>status</h4><?= $billet['status']?> </p>
           </div>
-           
           <div class="box_trait">
             <a href="../traitement/modifie_billet.php?id=<?= $billet['id']?> "> <i class="fa-solid fa-pen-to-square" style="color: #3011bc;"> </i> </a> 
             <a href="del.php?id=<?= $billet['id']?> "> <i class="fa-solid fa-trash" style="color: #fe7a15;"> </i></i> </a> 
           </div>
         </div>  
                 </section>
-           
-
         <style>
             .all{
                 margin:2% 7%;
