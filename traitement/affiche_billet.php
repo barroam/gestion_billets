@@ -32,7 +32,7 @@
             <p><h4>Nom complet:  <?= $billet['nom_complet']?> </h4>  </p>
             <p><h4> Numéro de téléphone: <?= $billet['telephone']?></h4> </p> 
         </div>
-        <div class="L_box">La requête pour afficher les idées récupérer : 
+        <div class="L_box">  
         <div class="box"> 
         <p><h4> Transport</h4><?= $billet['mode_transport']?> </p> 
             <p><h4>Date de réservation</h4><?= $billet['heure_reservation']?> </p>
