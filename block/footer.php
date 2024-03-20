@@ -18,10 +18,9 @@
         <div class="footer-content">
             <h3>Liens</h3>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="../pages/accueil.php">Accueil</a></li>
+                <li><a href="../pages/index.php">Réserver</a></li>
+                <li><a href="../traitement/affiche_billet.php">Billets</a></li>
             </ul>
         </div>
         <div class="footer-content">

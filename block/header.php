@@ -12,19 +12,14 @@
 <div>
     <img class="logo" src="../img/lion.png" alt="logo">
     <h1 class="titre"> <span>Salam</span> Voyage</h1>
-    
 </div>
 <ul>
     <li><a href="../pages/accueil.php">Accueil </a></li>
     <li><a href="../pages/index.php">Réserver</a></li>
     <li><a href="../traitement/affiche_billet.php">Billets </a></li>
-   
 </ul>
-
 <li><a href="../pages/profil.php">Profil </a></li>
 </nav>
-
-
 
 <style>
     body{
